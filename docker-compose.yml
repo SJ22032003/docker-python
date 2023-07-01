@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    container_name: fast-api-container
+    command: uvicorn source.main:app --host 0.0.0.0 --port 6600 --reload
+    ports:
+      - 6600:6600
+    volumes:
+      - .:/app
